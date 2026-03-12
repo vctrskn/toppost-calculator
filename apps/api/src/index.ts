@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import { rateLimit } from 'express-rate-limit';
-import { parseRouter } from './routes/parse.js';
-import { ratesRouter } from './routes/rates.js';
-import { calculateRouter } from './routes/calculate.js';
-import { shareRouter } from './routes/share.js';
+import { parseRouter } from './routes/parse';
+import { ratesRouter } from './routes/rates';
+import { calculateRouter } from './routes/calculate';
+import { shareRouter } from './routes/share';
 
 const app = express();
 const PORT = parseInt(process.env.PORT_API || '3001', 10);

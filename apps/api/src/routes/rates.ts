@@ -1,9 +1,12 @@
 import { Router } from 'express';
-import { createRequire } from 'module';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import type { FxRates } from '@toppost/calc-engine';
 
-const require = createRequire(import.meta.url);
-const tariffs = require('@toppost/config/tariffs');
+// Load tariffs from config package
+const tariffs = JSON.parse(
+  readFileSync(join(__dirname, '../../../../packages/config/tariffs.json'), 'utf-8')
+);
 
 export const ratesRouter = Router();
 

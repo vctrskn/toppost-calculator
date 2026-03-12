@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { createHash } from 'crypto';
-import { getRedis } from '../redis.js';
+import { getRedis } from '../redis';
 import type { ParsedProduct } from '@toppost/calc-engine';
 
 export const parseRouter = Router();

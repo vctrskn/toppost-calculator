@@ -93,7 +93,11 @@ export const useCalculatorStore = create<CalculatorState>()(
     parseUrl: async (url) => {
       set({ isParsing: true, parseError: null, parsedProduct: null });
       try {
-        const res = await fetch(`/api/parse?url=${encodeURIComponent(url)}`);
+        const res = await fetch('/api/parse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url }),
+        });
         if (!res.ok) {
           throw new Error('Не удалось распознать товар');
         }
@@ -209,8 +213,8 @@ export const useCalculatorStore = create<CalculatorState>()(
       try {
         const res = await fetch('/api/rates');
         if (!res.ok) throw new Error('Failed to fetch rates');
-        const rates: FxRates = await res.json();
-        set({ rates });
+        const data = await res.json();
+        set({ rates: data.rates as FxRates });
         get().recalculate();
       } catch {
         // Use default rates as fallback

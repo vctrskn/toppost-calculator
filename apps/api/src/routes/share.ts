@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { nanoid } from 'nanoid';
-import { getRedis } from '../redis.js';
+import { getRedis } from '../redis';
 
 export const shareRouter = Router();
 
