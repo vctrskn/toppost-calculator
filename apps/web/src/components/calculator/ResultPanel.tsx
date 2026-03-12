@@ -18,61 +18,40 @@ export function ResultPanel() {
 
   return (
     <div className="space-y-6">
-      {/* Breakdown table */}
-      <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-        <h3 className="mb-4 text-sm font-semibold text-gray-500 uppercase tracking-wide">
+      {/* Breakdown */}
+      <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h3 className="mb-4 text-xs font-bold text-gray-400 uppercase tracking-widest">
           Расчёт стоимости
         </h3>
 
         <div className="space-y-3">
           <Row label="Товар" value={formatEur(breakdown.itemPriceEur)} />
-          <Row
-            label="Комиссия TopPost (7%)"
-            value={formatEur(breakdown.commission)}
-          />
-          <Row
-            label="Обработка заказа"
-            value={formatEur(breakdown.processingFee)}
-          />
+          <Row label="Комиссия TopPost (7%)" value={formatEur(breakdown.commission)} />
+          <Row label="Обработка заказа" value={formatEur(breakdown.processingFee)} />
           <Row
             label="Доставка"
-            value={
-              breakdown.shipping === 0 ? 'БЕСПЛАТНО' : formatEur(breakdown.shipping)
-            }
+            value={breakdown.shipping === 0 ? 'БЕСПЛАТНО' : formatEur(breakdown.shipping)}
             valueClassName={breakdown.shipping === 0 ? 'text-green-600 font-semibold' : undefined}
           />
           <Row
             label="Таможенная пошлина"
-            value={
-              breakdown.customsDuty === 0
-                ? 'Без пошлины'
-                : formatEur(breakdown.customsDuty)
-            }
+            value={breakdown.customsDuty === 0 ? 'Без пошлины' : formatEur(breakdown.customsDuty)}
             valueClassName={breakdown.customsDuty === 0 ? 'text-green-600 font-semibold' : undefined}
           />
 
-          {insurance && (
-            <Row label="Страховка" value={formatEur(breakdown.insurance)} />
-          )}
-          {photoReport && (
-            <Row label="Фотоотчёт" value={formatEur(breakdown.photoReport)} />
-          )}
-          {giftWrap && (
-            <Row
-              label="Подарочная упаковка"
-              value={formatEur(breakdown.giftWrap)}
-            />
-          )}
+          {insurance && <Row label="Страховка" value={formatEur(breakdown.insurance)} />}
+          {photoReport && <Row label="Фотоотчёт" value={formatEur(breakdown.photoReport)} />}
+          {giftWrap && <Row label="Подарочная упаковка" value={formatEur(breakdown.giftWrap)} />}
 
-          {/* Divider */}
-          <div className="border-t border-gray-200 pt-3">
+          {/* Total */}
+          <div className="border-t border-gray-200 pt-4">
             <div className="flex items-baseline justify-between">
-              <span className="text-base font-bold text-gray-900">ИТОГО</span>
+              <span className="text-base font-bold text-dark">ИТОГО</span>
               <div className="text-right">
-                <span className="text-2xl font-bold text-gray-900 transition-all duration-300">
+                <span className="text-3xl font-bold text-brand transition-all duration-300">
                   {formatEur(totalEur)}
                 </span>
-                <p className="mt-0.5 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-gray-500">
                   {'\u2248'} {formatLocal(totalLocal.amount, totalLocal.symbol)}
                 </p>
               </div>
@@ -81,9 +60,9 @@ export function ResultPanel() {
         </div>
 
         {/* Delivery time */}
-        <div className="mt-4 flex items-center gap-2 rounded-lg bg-blue-50 px-4 py-3">
+        <div className="mt-5 flex items-center gap-2 rounded-xl bg-brand-50 px-4 py-3">
           <span className="text-lg">{'\uD83D\uDCE6'}</span>
-          <span className="text-sm font-medium text-blue-800">
+          <span className="text-sm font-semibold text-brand-700">
             {formatDays(delivery.daysMin, delivery.daysMax)}
           </span>
         </div>
@@ -101,15 +80,15 @@ export function ResultPanel() {
           href="https://t.me/toppost_de"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-base font-semibold text-white shadow-sm transition-all hover:bg-blue-700 active:scale-[0.98]"
+          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-base font-bold text-white shadow-sm transition-all hover:bg-brand-hover active:scale-[0.98]"
         >
-          {'\uD83D\uDED2'} Заказать через Telegram
+          Заказать через Telegram
         </a>
         <a
-          href="https://wa.me/4915123456789"
+          href="https://wa.me/4915147300663"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-1 items-center justify-center gap-2 rounded-xl border-2 border-green-600 bg-white px-6 py-4 text-base font-semibold text-green-700 shadow-sm transition-all hover:bg-green-50 active:scale-[0.98]"
+          className="flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-green-600 bg-white px-6 py-4 text-base font-bold text-green-700 shadow-sm transition-all hover:bg-green-50 active:scale-[0.98]"
         >
           Заказать через WhatsApp
         </a>

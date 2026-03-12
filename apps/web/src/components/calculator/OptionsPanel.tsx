@@ -14,19 +14,19 @@ const OPTIONS: OptionItem[] = [
     id: 'insurance',
     label: 'Страхование',
     description: 'Защита товара на весь путь доставки',
-    priceLabel: '3% от стоимости, мин. 5 €',
+    priceLabel: '3% от стоимости, мин. 5 \u20ac',
   },
   {
     id: 'photoReport',
     label: 'Фотоотчёт',
     description: 'Фото товара при получении на складе',
-    priceLabel: '3 €',
+    priceLabel: '3 \u20ac',
   },
   {
     id: 'giftWrap',
     label: 'Подарочная упаковка',
     description: 'Оформим посылку как подарок',
-    priceLabel: '5 €',
+    priceLabel: '5 \u20ac',
   },
 ];
 
@@ -47,7 +47,7 @@ export function OptionsPanel() {
 
   return (
     <div className="space-y-3">
-      <h3 className="text-sm font-semibold text-gray-700">
+      <h3 className="text-sm font-semibold text-dark">
         Дополнительные услуги
       </h3>
       {OPTIONS.map((opt) => {
@@ -59,15 +59,14 @@ export function OptionsPanel() {
             onClick={toggles[opt.id]}
             className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition-all duration-200 ${
               isActive
-                ? 'border-blue-500 bg-blue-50'
+                ? 'border-brand bg-brand-50'
                 : 'border-gray-200 bg-white hover:border-gray-300'
             }`}
           >
-            {/* Checkbox */}
             <div
               className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded transition-all ${
                 isActive
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-brand text-white'
                   : 'border-2 border-gray-300 bg-white'
               }`}
             >
@@ -88,16 +87,15 @@ export function OptionsPanel() {
               )}
             </div>
 
-            {/* Text */}
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between">
                 <span
-                  className={`text-sm font-medium ${isActive ? 'text-blue-700' : 'text-gray-900'}`}
+                  className={`text-sm font-medium ${isActive ? 'text-brand-700' : 'text-gray-900'}`}
                 >
                   {opt.label}
                 </span>
                 <span
-                  className={`text-xs font-medium ${isActive ? 'text-blue-600' : 'text-gray-500'}`}
+                  className={`text-xs font-medium ${isActive ? 'text-brand-600' : 'text-gray-500'}`}
                 >
                   {opt.priceLabel}
                 </span>

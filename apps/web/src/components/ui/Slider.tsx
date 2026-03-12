@@ -26,7 +26,7 @@ export function Slider({
       {label && (
         <div className="mb-2 flex items-center justify-between">
           <label className="text-sm font-medium text-gray-700">{label}</label>
-          <span className="text-sm font-semibold text-blue-600">
+          <span className="text-sm font-semibold text-brand">
             {value} {unit}
           </span>
         </div>
@@ -41,7 +41,7 @@ export function Slider({
           onChange={(e) => onChange(parseFloat(e.target.value))}
           className="slider-input h-2 w-full cursor-pointer appearance-none rounded-full bg-gray-200"
           style={{
-            background: `linear-gradient(to right, #2563eb 0%, #2563eb ${percentage}%, #e5e7eb ${percentage}%, #e5e7eb 100%)`,
+            background: `linear-gradient(to right, #fc6a09 0%, #fc6a09 ${percentage}%, #e5e7eb ${percentage}%, #e5e7eb 100%)`,
           }}
         />
       </div>
@@ -57,22 +57,22 @@ export function Slider({
         .slider-input::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          width: 20px;
-          height: 20px;
+          width: 22px;
+          height: 22px;
           border-radius: 50%;
-          background: #2563eb;
+          background: #fc6a09;
           cursor: pointer;
           border: 3px solid white;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
         }
         .slider-input::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
+          width: 22px;
+          height: 22px;
           border-radius: 50%;
-          background: #2563eb;
+          background: #fc6a09;
           cursor: pointer;
           border: 3px solid white;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
         }
       `}</style>
     </div>

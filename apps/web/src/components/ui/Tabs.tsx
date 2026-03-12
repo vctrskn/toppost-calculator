@@ -34,11 +34,10 @@ export function Tabs({ tabs, activeTab, onChange }: TabsProps) {
   return (
     <div
       ref={containerRef}
-      className="relative flex rounded-lg bg-gray-100 p-1"
+      className="relative flex rounded-full bg-gray-100 p-1"
     >
-      {/* Active indicator */}
       <div
-        className="absolute top-1 bottom-1 rounded-md bg-white shadow-sm transition-all duration-300 ease-out"
+        className="absolute top-1 bottom-1 rounded-full bg-brand shadow-sm transition-all duration-300 ease-out"
         style={{ left: indicator.left, width: indicator.width }}
       />
 
@@ -47,9 +46,9 @@ export function Tabs({ tabs, activeTab, onChange }: TabsProps) {
           key={tab.id}
           data-tab-id={tab.id}
           onClick={() => onChange(tab.id)}
-          className={`relative z-10 flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+          className={`relative z-10 flex-1 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors duration-200 ${
             activeTab === tab.id
-              ? 'text-gray-900'
+              ? 'text-white'
               : 'text-gray-500 hover:text-gray-700'
           }`}
         >

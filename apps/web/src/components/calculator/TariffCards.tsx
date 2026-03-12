@@ -20,9 +20,9 @@ interface TariffOption {
 }
 
 const TARIFFS: TariffOption[] = [
-  { id: 'express', icon: '\u26A1', label: 'Экспресс', daysLabel: '7-10 дней' },
-  { id: 'standard', icon: '\uD83D\uDCE6', label: 'Стандарт', daysLabel: '10-14 дней' },
-  { id: 'economy', icon: '\uD83D\uDCB0', label: 'Эконом', daysLabel: '14-21 дней' },
+  { id: 'express', icon: '\u26A1', label: 'Экспресс', daysLabel: '7\u201310 дней' },
+  { id: 'standard', icon: '\uD83D\uDCE6', label: 'Стандарт', daysLabel: '10\u201314 дней' },
+  { id: 'economy', icon: '\uD83D\uDCB0', label: 'Эконом', daysLabel: '14\u201321 дней' },
 ];
 
 export function TariffCards() {
@@ -38,7 +38,6 @@ export function TariffCards() {
   const giftWrap = useCalculatorStore((s) => s.giftWrap);
   const rates = useCalculatorStore((s) => s.rates) ?? DEFAULT_RATES;
 
-  // Calculate shipping price for each tariff
   function getShippingForTariff(
     tariffId: 'express' | 'standard' | 'economy',
   ): number | null {
@@ -74,13 +73,13 @@ export function TariffCards() {
             onClick={() => setTariff(t.id)}
             className={`relative flex flex-col items-center rounded-xl border-2 px-3 py-4 text-center transition-all duration-200 ${
               isActive
-                ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500/20'
+                ? 'border-brand bg-brand-50 ring-2 ring-brand/20'
                 : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
             }`}
           >
             <span className="text-2xl">{t.icon}</span>
             <span
-              className={`mt-1.5 text-sm font-semibold ${isActive ? 'text-blue-700' : 'text-gray-900'}`}
+              className={`mt-1.5 text-sm font-semibold ${isActive ? 'text-brand-700' : 'text-gray-900'}`}
             >
               {t.label}
             </span>
@@ -90,15 +89,15 @@ export function TariffCards() {
                 isFree
                   ? 'text-green-600'
                   : isActive
-                    ? 'text-blue-600'
+                    ? 'text-brand-600'
                     : 'text-gray-600'
               }`}
             >
               {shipping === null
-                ? '—'
+                ? '\u2014'
                 : isFree
                   ? 'БЕСПЛАТНО'
-                  : `+${shipping.toFixed(2)} €`}
+                  : `+${shipping.toFixed(2)} \u20ac`}
             </span>
           </button>
         );

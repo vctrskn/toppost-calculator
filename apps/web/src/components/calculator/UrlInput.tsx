@@ -39,25 +39,24 @@ export function UrlInput() {
       const text = await navigator.clipboard.readText();
       handleChange(text);
     } catch {
-      // Clipboard access denied — user will type manually
+      // Clipboard access denied
     }
   }, [handleChange]);
 
   return (
     <div className="space-y-4">
-      {/* URL Input */}
       <div className="relative">
         <input
           type="url"
           value={url}
           onChange={(e) => handleChange(e.target.value)}
           placeholder="Вставьте ссылку на товар из европейского магазина"
-          className="w-full rounded-lg border border-gray-300 bg-white py-3.5 pr-12 pl-4 text-sm text-gray-900 transition-all placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
+          className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-12 pl-4 text-sm text-gray-900 transition-all placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none"
         />
         <button
           type="button"
           onClick={handlePaste}
-          className="absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+          className="absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-brand"
           title="Вставить из буфера"
         >
           <svg
@@ -76,7 +75,6 @@ export function UrlInput() {
         </button>
       </div>
 
-      {/* Loading skeleton */}
       {isParsing && (
         <div className="animate-pulse rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
           <div className="flex gap-4">
@@ -90,21 +88,19 @@ export function UrlInput() {
         </div>
       )}
 
-      {/* Error state */}
       {parseError && !isParsing && (
         <div className="rounded-xl border border-red-100 bg-red-50 p-4">
           <p className="text-sm text-red-700">{parseError}</p>
           <button
             type="button"
             onClick={() => setMode('manual')}
-            className="mt-2 text-sm font-medium text-blue-600 underline-offset-2 hover:underline"
+            className="mt-2 text-sm font-semibold text-brand underline-offset-2 hover:underline"
           >
             Укажите данные вручную
           </button>
         </div>
       )}
 
-      {/* Parsed product */}
       {parsedProduct && !isParsing && <ProductCard product={parsedProduct} />}
     </div>
   );

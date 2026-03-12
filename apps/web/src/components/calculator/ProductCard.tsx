@@ -9,14 +9,13 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const currencySymbol =
     product.currency === 'EUR'
-      ? '€'
+      ? '\u20ac'
       : product.currency === 'GBP'
-        ? '£'
+        ? '\u00a3'
         : '$';
 
   return (
     <div className="flex gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-      {/* Image */}
       <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
         {product.imageUrl ? (
           <img
@@ -43,15 +42,14 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      {/* Details */}
       <div className="flex min-w-0 flex-1 flex-col justify-center">
         <p className="truncate text-sm font-medium text-gray-900">
           {product.name}
         </p>
-        <p className="mt-1 text-lg font-bold text-gray-900">
+        <p className="mt-1 text-lg font-bold text-dark">
           {product.price.toFixed(2)} {currencySymbol}
         </p>
-        <span className="mt-1 inline-flex w-fit items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">
+        <span className="mt-1 inline-flex w-fit items-center rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
           {product.store}
         </span>
       </div>

@@ -9,8 +9,8 @@ interface CurrencyInputProps {
 }
 
 const CURRENCY_SYMBOLS: Record<string, string> = {
-  EUR: '€',
-  GBP: '£',
+  EUR: '\u20ac',
+  GBP: '\u00a3',
   USD: '$',
 };
 
@@ -22,7 +22,7 @@ export function CurrencyInput({
   placeholder = '0.00',
 }: CurrencyInputProps) {
   return (
-    <div className="flex overflow-hidden rounded-lg border border-gray-300 bg-white transition-all duration-200 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20">
+    <div className="flex overflow-hidden rounded-xl border border-gray-300 bg-white transition-all duration-200 focus-within:border-brand focus-within:ring-2 focus-within:ring-brand/20">
       <div className="flex items-center pl-4 text-gray-400">
         {CURRENCY_SYMBOLS[currency]}
       </div>

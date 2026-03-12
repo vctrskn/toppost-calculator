@@ -11,12 +11,12 @@ const FAQ_ITEMS = [
   {
     question: 'Как рассчитывается стоимость доставки?',
     answer:
-      'Стоимость складывается из цены товара, комиссии сервиса (7%, мин. 5€), сбора за обработку (5€), стоимости доставки (зависит от тарифа и веса) и таможенной пошлины (при стоимости свыше 200€).',
+      'Стоимость складывается из цены товара, комиссии сервиса (7%, мин. 5\u20ac), сбора за обработку (5\u20ac), стоимости доставки (зависит от тарифа и веса) и таможенной пошлины (при стоимости свыше 200\u20ac).',
   },
   {
     question: 'Какие сроки доставки?',
     answer:
-      'Экспресс: 7–10 дней, Стандарт: 10–14 дней, Эконом: 14–21 день. Сроки указаны с момента получения товара на нашем складе в Германии.',
+      'Экспресс: 7\u201310 дней, Стандарт: 10\u201314 дней, Эконом: 14\u201321 день. Сроки указаны с момента получения товара на нашем складе в Германии.',
   },
   {
     question: 'В какие страны вы доставляете?',
@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
   {
     question: 'Нужно ли платить таможенную пошлину?',
     answer:
-      'Таможенная пошлина начисляется, если стоимость товара превышает 200€ или вес превышает 31 кг. Ставка — 15% от суммы превышения по стоимости или 2€ за каждый килограмм превышения по весу.',
+      'Таможенная пошлина начисляется, если стоимость товара превышает 200\u20ac или вес превышает 31 кг. Ставка \u2014 15% от суммы превышения по стоимости или 2\u20ac за каждый килограмм превышения по весу.',
   },
   {
     question: 'Из каких магазинов можно заказать?',
@@ -38,11 +38,11 @@ const FAQ_ITEMS = [
 export default function CalculatorPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12">
-      <section className="mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900">
+      <section className="mb-10 text-center">
+        <h1 className="mb-3 text-3xl font-bold tracking-tight text-dark sm:text-4xl">
           Калькулятор доставки из Европы
         </h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-base text-gray-500">
           Рассчитайте полную стоимость с учётом всех сборов и пошлин
         </p>
       </section>
@@ -50,19 +50,19 @@ export default function CalculatorPage() {
       <Calculator />
 
       <section className="mt-16">
-        <h2 className="mb-8 text-2xl font-bold text-gray-900">
+        <h2 className="mb-8 text-2xl font-bold text-dark">
           Часто задаваемые вопросы
         </h2>
-        <div className="space-y-6">
+        <div className="space-y-4">
           {FAQ_ITEMS.map((item, index) => (
             <details
               key={index}
-              className="rounded-lg border border-gray-200 p-4"
+              className="group rounded-xl border border-gray-200 bg-white p-5 transition-all open:shadow-sm"
             >
-              <summary className="cursor-pointer text-lg font-medium text-gray-900">
+              <summary className="cursor-pointer text-base font-semibold text-dark">
                 {item.question}
               </summary>
-              <p className="mt-3 text-gray-600">{item.answer}</p>
+              <p className="mt-3 text-sm leading-relaxed text-gray-600">{item.answer}</p>
             </details>
           ))}
         </div>
