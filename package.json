@@ -1,0 +1,20 @@
+{
+  "name": "toppost-calculator",
+  "private": true,
+  "version": "0.1.0",
+  "description": "TopPost.de Calculator — стоимость доставки из Европы «под ключ»",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "parse:test": "node packages/parsers/smoke-test.js"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

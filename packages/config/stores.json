@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "stores": {
+    "phase_1": [
+      { "domain": "zalando.de", "name": "Zalando", "parser": "zalando", "priority": 1 },
+      { "domain": "amazon.de", "name": "Amazon.de", "parser": "amazon", "priority": 2 },
+      { "domain": "nike.com", "name": "Nike", "parser": "nike", "priority": 3 },
+      { "domain": "adidas.de", "name": "Adidas", "parser": "adidas", "priority": 4 },
+      { "domain": "zara.com", "name": "Zara", "parser": "zara", "priority": 5 }
+    ],
+    "phase_2": [
+      { "domain": "hm.com", "name": "H&M", "parser": "hm", "priority": 6 },
+      { "domain": "asos.com", "name": "ASOS", "parser": "asos", "priority": 7 },
+      { "domain": "mytheresa.com", "name": "Mytheresa", "parser": "mytheresa", "priority": 8 },
+      { "domain": "net-a-porter.com", "name": "NET-A-PORTER", "parser": "netaporter", "priority": 9 },
+      { "domain": "aboutyou.de", "name": "AboutYou", "parser": "aboutyou", "priority": 10 },
+      { "domain": "otto.de", "name": "Otto", "parser": "otto", "priority": 11 },
+      { "domain": "mediamarkt.de", "name": "MediaMarkt", "parser": "mediamarkt", "priority": 12 },
+      { "domain": "douglas.de", "name": "Douglas", "parser": "douglas", "priority": 13 },
+      { "domain": "mrporter.com", "name": "MR PORTER", "parser": "mrporter", "priority": 14 },
+      { "domain": "moncler.com", "name": "Moncler", "parser": "moncler", "priority": 15 },
+      { "domain": "gucci.com", "name": "Gucci", "parser": "gucci", "priority": 16 },
+      { "domain": "farfetch.com", "name": "Farfetch", "parser": "farfetch", "priority": 17 },
+      { "domain": "ssense.com", "name": "SSENSE", "parser": "ssense", "priority": 18 },
+      { "domain": "apple.com", "name": "Apple", "parser": "apple", "priority": 19 },
+      { "domain": "samsung.com", "name": "Samsung", "parser": "samsung", "priority": 20 }
+    ]
+  }
+}

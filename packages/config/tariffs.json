@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-03-12",
+  "pricing": {
+    "commission_rate": 0.07,
+    "commission_min_eur": 5,
+    "processing_fee_eur": 5,
+    "free_shipping_threshold_eur": 100,
+    "shipping_below_threshold_eur": 15
+  },
+  "shipping": {
+    "express": {
+      "RU": { "0-1": 15, "1-3": 20, "3-5": 25, "5-10": 35, "10-20": 50, "20-31": 70 },
+      "KZ": { "0-1": 18, "1-3": 24, "3-5": 30, "5-10": 42, "10-20": 60, "20-31": 85 },
+      "KG": { "0-1": 22, "1-3": 28, "3-5": 35, "5-10": 48, "10-20": 70, "20-31": 95 }
+    },
+    "standard": {
+      "days_min": 10,
+      "days_max": 14
+    },
+    "express_meta": {
+      "days_min": 7,
+      "days_max": 10
+    },
+    "economy": {
+      "days_min": 14,
+      "days_max": 21,
+      "price_below_threshold_eur": 10
+    }
+  },
+  "customs": {
+    "duty_free_threshold_eur": 200,
+    "duty_free_weight_kg": 31,
+    "over_value_rate": 0.15,
+    "over_weight_rate_eur_per_kg": 2
+  },
+  "options": {
+    "insurance": { "rate": 0.03, "min_eur": 5 },
+    "photo_report_eur": 3,
+    "gift_wrap_eur": 5
+  },
+  "categories": [
+    { "id": "clothing", "label": "Одежда", "default_weight_kg": 1.0 },
+    { "id": "shoes", "label": "Обувь", "default_weight_kg": 1.5 },
+    { "id": "bags", "label": "Сумки и аксессуары", "default_weight_kg": 1.0 },
+    { "id": "electronics", "label": "Электроника", "default_weight_kg": 2.0 },
+    { "id": "cosmetics", "label": "Косметика и парфюмерия", "default_weight_kg": 0.5 },
+    { "id": "sports", "label": "Спортивные товары", "default_weight_kg": 2.0 },
+    { "id": "jewelry", "label": "Ювелирные изделия", "default_weight_kg": 0.3 },
+    { "id": "home", "label": "Товары для дома", "default_weight_kg": 3.0 },
+    { "id": "kids", "label": "Детские товары", "default_weight_kg": 1.5 },
+    { "id": "supplements", "label": "Продукты питания / БАДы", "default_weight_kg": 1.0 },
+    { "id": "other", "label": "Другое", "default_weight_kg": 2.0 }
+  ],
+  "countries": [
+    { "code": "RU", "label": "Россия", "currency": "RUB", "symbol": "₽" },
+    { "code": "KZ", "label": "Казахстан", "currency": "KZT", "symbol": "₸" },
+    { "code": "KG", "label": "Киргизия", "currency": "KGS", "symbol": "сом" }
+  ],
+  "fx_buffer": 0.02
+}
