@@ -1,0 +1,9 @@
+{
+  "name": "@toppost/config",
+  "version": "0.1.0",
+  "main": "./tariffs.json",
+  "exports": {
+    "./tariffs": "./tariffs.json",
+    "./stores": "./stores.json"
+  }
+}
