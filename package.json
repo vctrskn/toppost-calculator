@@ -11,6 +11,7 @@
     "parse:test": "node packages/parsers/smoke-test.js"
   },
   "devDependencies": {
+    "next": "^15.2.0",
     "turbo": "^2.4.0"
   },
   "packageManager": "pnpm@9.15.0",

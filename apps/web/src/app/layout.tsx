@@ -18,25 +18,31 @@ export default function RootLayout({
         {/* Header */}
         <header className="border-b border-gray-200 bg-white">
           <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4">
-            <a href="https://toppost.de" className="flex items-center gap-2">
+            <a href="https://toppost.de" className="flex shrink-0 items-center gap-2">
               <img
                 src="https://toppost.de/images/logo/svg/Toppost_logo_color.svg"
                 alt="TopPost.de"
-                className="h-8"
+                className="h-7 sm:h-8"
               />
             </a>
-            <nav className="flex items-center gap-4">
+            <nav className="flex shrink-0 items-center gap-2 sm:gap-4">
               <a
                 href="https://toppost.de"
-                className="text-sm text-gray-600 transition-colors hover:text-brand"
+                className="hidden text-sm text-gray-600 transition-colors hover:text-brand sm:inline"
               >
                 На сайт
+              </a>
+              <a
+                href="https://toppost.de"
+                className="rounded-full border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50 sm:hidden"
+              >
+                toppost.de
               </a>
               <a
                 href="https://t.me/toppost_de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-hover"
+                className="rounded-full bg-brand px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-brand-hover sm:px-4 sm:py-2 sm:text-sm"
               >
                 Telegram
               </a>

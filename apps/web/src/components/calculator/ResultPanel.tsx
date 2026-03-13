@@ -80,7 +80,7 @@ export function ResultPanel() {
           href="https://t.me/toppost_de"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-base font-bold text-white shadow-sm transition-all hover:bg-brand-hover active:scale-[0.98]"
+          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand px-5 py-3.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-brand-hover active:scale-[0.98] sm:px-6 sm:py-4 sm:text-base"
         >
           Заказать через Telegram
         </a>
@@ -88,7 +88,7 @@ export function ResultPanel() {
           href="https://wa.me/4915147300663"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-green-600 bg-white px-6 py-4 text-base font-bold text-green-700 shadow-sm transition-all hover:bg-green-50 active:scale-[0.98]"
+          className="flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-green-600 bg-white px-5 py-3.5 text-sm font-bold text-green-700 shadow-sm transition-all hover:bg-green-50 active:scale-[0.98] sm:px-6 sm:py-4 sm:text-base"
         >
           Заказать через WhatsApp
         </a>
