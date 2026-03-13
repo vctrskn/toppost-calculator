@@ -34,7 +34,7 @@ export default function RootLayout({
               </a>
               <a
                 href="https://toppost.de"
-                className="rounded-full border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50 sm:hidden"
+                className="rounded-full border-2 border-brand px-3 py-1.5 text-xs font-semibold text-brand transition-colors hover:bg-brand-50 sm:hidden"
               >
                 toppost.de
               </a>
